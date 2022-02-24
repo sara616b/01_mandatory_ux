@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Tax calculator</title>
+</head>
+
+<body>
+    <header>
+        <h1>Tax calculator</h1>
+    </header>
+    <main>
+        <section>
+            <form>
+                <label for="monetary_amount">
+                    Monetary amount
+                    <input id="monetary_amount" name="monetary_amount" type="number" min="0" step="0.01" value="0.00">
+                </label>
+                <label for="tax_percentage">
+                    Tax percentage
+                    <input id="tax_percentage" name="tax_percentage" type="number" min="0" max="100" step="0.01"
+                        value="0.00">
+                </label>
+                <input type="submit" value="Calculate">
+            </form>
+        </section>
+        <section id="result">
+            <p>Tax amount: <span id="tax_result">0.00</span> DKK</p>
+            <p>Final amount: <span id="final_result">0.00</span> DKK</p>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

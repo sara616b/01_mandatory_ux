@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+
+<body>
+    <header>
+        <h1>Restaurant KEA</h1>
+        <nav>
+            <a href="./">Home</a>
+            <a href="./menu.html">Menu</a>
+            <a href="./contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <p>
+                We provide a wide variety of fine dishes and beverages at moderate prices. Located in one of the
+                trendiest areas of Copenhagen, Restaurant KEA has been at the forefront of Denmark's culinary
+                life for the past decade. Let us take you on a journey of taste that you will never forget. You will
+                not only not regret it, but you will feel an urge to spread the good news around to your friends
+                and family. So amazing is the food experience at Restaurant KEA. We look forward to serving you.
+            </p>
+        </section>
+        <section>
+            <img src="./img/map.jpg" alt="map of KEA Restaurant">
+        </section>
+        <section>
+            <form action="./process.php" method="post">
+                <fieldset>
+                    <legend>Contact form</legend>
+                    <div>
+                        <label for="fullname">
+                            Full name
+                            <input id="fullname" name="fullname" type="text">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="phone_number">
+                            Phone no.
+                            <input id="phone_number" name="phone_number" type="text">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="email">
+                            E-mail
+                            <input id="email" name="email" type="text">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="persons">
+                            Persons
+                            <input id="persons" name="persons" type="number" value="2">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="date_and_time">
+                            Date and time
+                            <input id="date_and_time" name="date_and_time" type="date">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="information">
+                            Further Information<br>
+                            <textarea name="information" id="information" cols="30" rows="10"></textarea>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="submit" value="Send">
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+</body>
+
+</html>
