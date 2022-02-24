@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* BODY */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+/* HEADER */
+header {
+    background-color: #004040;
+    color: white;
+    padding: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+/* MAIN */
+main {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
+    border: rgb(196, 196, 196) solid 1px;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.164) 0px 2px 5px;
+}
+
+/* ERROR */
+#error_container {
+    color: rgb(122, 23, 23);
+    font-weight: bold;
+    font-size: 80%;
+    font-style: italic;
+}
+#error_container.hide {
+    display: none;
+}
+
+/* FORM */
+form label input {
+    margin: 10px 0;
+    border: rgb(196, 196, 196) solid 1px;
+    padding: 5px;
+    border-radius: 5px;
+}
+form input[type="submit"] {
+    color: #004040;
+    background-color: white;
+    border: #004040 solid 2px;
+    border-radius: 5px;
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.2s;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 3px;
+}
+form input[type="submit"]:hover {
+    color: white;
+    background-color: #004040;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 3px inset;
+    cursor: pointer;
+}
+form section + section {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-bottom: 15px;
+}
+
+/* RESULT */
+#result {
+    background-color: #004040;
+    color: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
+#result p {
+    padding: 5px 0;
+}
+#result span {
+    font-weight: bold;
+}
