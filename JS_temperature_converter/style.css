@@ -5,6 +5,9 @@
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.hide {
+    display: none;
+}
 
 /* BODY */
 body {
@@ -43,9 +46,6 @@ main {
     font-weight: bold;
     font-size: 80%;
     font-style: italic;
-}
-#error_container.hide {
-    display: none;
 }
 
 /* FORM */
@@ -90,6 +90,6 @@ form section + section {
 #result p {
     padding: 5px 0;
 }
-#result span {
+#result #to_value_span {
     font-weight: bold;
 }

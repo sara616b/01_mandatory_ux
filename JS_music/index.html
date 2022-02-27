@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Music CDs</title>
+</head>
+
+<body>
+    <header>
+        <h1>Music CDs</h1>
+    </header>
+    <main>
+        <section>
+            <form>
+                <label for="author">
+                    Author
+                    <input type="text" name="author" id="author">
+                </label>
+                <label for="title">
+                    Title
+                    <input type="text" name="title" id="title">
+                </label>
+                <label for="year">
+                    Year
+                    <input type="number" name="year" id="year" min="0" maxlength="4">
+                </label>
+                <input type="submit" value="Add CD">
+            </form>
+        </section>
+        <section id="cd_list">
+            <table>
+                <tr>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th></th>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <template>
+        <tr>
+            <td class="author"></td>
+            <td class="title"></td>
+            <td class="year"></td>
+            <td class="delete"></td>
+        </tr>
+    </template>
+</body>
+
+</html>

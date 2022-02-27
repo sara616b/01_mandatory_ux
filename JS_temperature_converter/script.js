@@ -2,27 +2,41 @@
 
 window.addEventListener("load", () => inital())
 
-const calculateTemperature = (value, from_unit, to_unit) => {
-    if (from_unit === "fahrenheit" && to_unit === "celsius") {
-        // C = 5(F-32)/9
-        return 5*(Number(value)-32) / 9; 
+const calculateTemperature = (value, fromUnit, toUnit) => {
+    switch (fromUnit){
+        case "fahrenheit":
+            if (toUnit === "celsius") { return 5*(Number(value)-32) / 9; }
+            if (toUnit === "kelvin") { return (Number(value)-32)/1.8+273.15; }
+        case "kelvin":
+            if (toUnit === "celsius") { return Number(value)-273.15; }
+            if (toUnit === "fahrenheit") { return (9*(Number(value)-273.15)/5)+32; }
+        case "celsius":
+            if (toUnit === "fahrenheit") { return (Number(value)*1.8)*+32; }
+            if (toUnit === "kelvin") { return Number(value)+273.15; }
+        default:
+            return null;
     }
-    if (from_unit === "fahrenheit" && to_unit === "kelvin") {
-        return (Number(value)-32)/1.8+273.15; 
-    }
-    if (from_unit === "kelvin" && to_unit === "celsius") {
-        return Number(value)-273.15; 
-    }
-    if (from_unit === "kelvin" && to_unit === "fahrenheit") {
-        return (9*(Number(value)-273.15)/5)+32; 
-    }
-    if (from_unit === "celsius" && to_unit === "fahrenheit") {
-        return (Number(value)*1.8)*+32;
-    }
-    if (from_unit === "celsius" && to_unit === "kelvin") {
-        return Number(value)+273.15; 
-    }
-    return null;
+}
+
+const getShortUnit = (unitName) => {
+    return unitName === "kelvin" ? "K" : unitName === "celsius" ? "°C" : "F";
+}
+
+const displayError = (text, errorContainer) => {
+    errorContainer.classList = '';
+    errorContainer.textContent = text;
+    document.querySelector("#result").classList = 'hide';
+}
+
+const displayResult = (value=0, fromUnit=none, toUnit=none, result=0, errorContainer) => {
+    // hide error
+    errorContainer.classList = 'hide';
+    errorContainer.textContent = "";
+    //display result container and values
+    document.querySelector("#result").classList = '';
+    document.querySelector("#result #from_value_span").textContent = value + " " + getShortUnit(fromUnit);
+    document.querySelector("#result #to_value_span").textContent = result.toFixed(2) + " " + getShortUnit(toUnit);
+
 }
 
 const handleConvertFormSubmission = (event) => {
@@ -30,25 +44,22 @@ const handleConvertFormSubmission = (event) => {
     // get value to convert
     const value = event.target.querySelector("#value").value;
     // get units to and from
-    const from_unit = event.target.querySelector("#from_temperature").value;
-    const to_unit = event.target.querySelector("#to_temperature").value;
-
+    const fromUnit = event.target.querySelector("#from_temperature").value;
+    const toUnit = event.target.querySelector("#to_temperature").value;
+    // get errorcontainer
     const errorContainer = document.querySelector("#error_container");
-    errorContainer.classList = 'hide';
-    if (from_unit === to_unit) {
-        errorContainer.classList = '';
-        errorContainer.textContent = "Please choose two different units";
+
+    // check for errors and display them or the result
+    if (fromUnit === toUnit) {
+        displayError("Please choose two different units", errorContainer);
     } else {
-        errorContainer.classList = 'hide';
-        errorContainer.textContent = "";
         // do calculation
-        const result = calculateTemperature(value, from_unit, to_unit);
+        const result = calculateTemperature(value, fromUnit, toUnit);
         if (result === null) {
-            errorContainer.classList = '';
-            errorContainer.textContent = "Sorry, an error occured while calculating!";
+            displayError("Sorry, an error occured while calculating!", errorContainer);
         }
         // display result
-        document.querySelector("#result span").textContent = result.toFixed(2) + " " + (to_unit === "kelvin" ? "K" : to_unit === "celsius" ? "C" : "F");
+        displayResult(value, fromUnit, toUnit, result, errorContainer);
     }
 }
 

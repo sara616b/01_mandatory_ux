@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* MAIN */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+}
+main section:first-of-type {
+    max-width: 800px;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border: rgb(196, 196, 196) solid 1px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.164) 0px 2px 5px;
+}
+
+/* HEADER */
+header {
+    background-color: #004040;
+    color: white;
+    padding: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+/* FORM */
+form {
+    max-width: 400px;
+    margin: auto;
+}
+form label {
+    display: flex;
+    flex-direction: column;
+}
+form label[for="year"] {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+form label input {
+    margin: 10px 0;
+    border: rgb(196, 196, 196) solid 1px;
+    padding: 5px;
+    border-radius: 5px;
+}
+form input[type="submit"] {
+    color: #004040;
+    background-color: white;
+    border: #004040 solid 2px;
+    border-radius: 5px;
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.2s;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 3px;
+}
+form input[type="submit"]:hover {
+    color: white;
+    background-color: #004040;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 3px inset;
+    cursor: pointer;
+}
+/* CD TABLE */
+table {
+    max-width: 800px;
+    margin: auto;
+}
+table tr {
+    display: grid;
+    grid-template-columns: 4fr 4fr 3fr 1fr;
+}
+table tr th {
+    border: solid white 1px;
+    background-color: #004040;
+    color: white;
+    padding: 5px;
+}
+table tr td {
+    border-right: solid #0040407c 1px;
+    padding: 5px;
+    text-align: center;
+    font-weight: 300;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+table tr td:last-of-type {
+    border-right: none;
+}
+table tr:nth-of-type(even) {
+    background-color: rgb(236, 236, 236);
+}
+table tr td:last-of-type:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+table tr td:last-of-type::after {
+    text-align: center;
+    display: block;
+    content: "🗑️";
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 450px) {
+    form label {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+}

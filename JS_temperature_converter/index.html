@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
     <title>Temperature converter</title>
 </head>
@@ -15,7 +15,7 @@
         <h1>Temperature converter</h1>
     </header>
     <main>
-        <p id="error_container"><span></span></p>
+        <p id="error_container" class="hide"><span></span></p>
         <form>
             <section>
                 <label for="value">
@@ -43,8 +43,8 @@
             </section>
             <input type="submit" value="Calculate!">
         </form>
-        <section id="result">
-            <p>The result is: <span></span></p>
+        <section id="result" class="hide">
+            <p><span id="from_value_span"></span> = <span id="to_value_span"></span></p>
         </section>
     </main>
 </body>

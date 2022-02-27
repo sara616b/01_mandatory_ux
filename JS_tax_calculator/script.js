@@ -1,23 +1,27 @@
 "use strict";
 
+const calculateTax = (amount, percentage) => {
+    return amount / 100 * percentage;
+}
+
 const formSumbited = (event) => {
     event.preventDefault();
 
     // get values from form
-    const moneraty_amount = event.target.querySelector("#monetary_amount").value;
-    const tax_percentage = event.target.querySelector("#tax_percentage").value;
+    const moneratyAmount = event.target.querySelector("#monetary_amount").value;
+    const taxPercentage = event.target.querySelector("#tax_percentage").value;
 
     // calculate tax and final result
-    const calculated_tax = moneraty_amount / 100 * tax_percentage;
-    const final_result = moneraty_amount - calculated_tax;
+    const calculatedTax = calculateTax(moneratyAmount, taxPercentage);
+    const finalResult = moneratyAmount - calculatedTax;
 
     // display tax result
-    const tax_result_span = document.querySelector("#tax_result");
-    tax_result_span.textContent = calculated_tax.toFixed(2);
+    const taxResultSpan = document.querySelector("#tax_result");
+    taxResultSpan.textContent = calculatedTax.toFixed(2);
     
     // display final result
-    const final_result_span = document.querySelector("#final_result");
-    final_result_span.textContent = final_result.toFixed(2);
+    const finalResultSpan = document.querySelector("#final_result");
+    finalResultSpan.textContent = finalResult.toFixed(2);
 }
 
 const initalLoad = () => {

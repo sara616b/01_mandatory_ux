@@ -19,18 +19,16 @@
     </header>
     <main>
         <section>
-            <p>
-                We provide a wide variety of fine dishes and beverages at moderate prices. Located in one of the
-                trendiest areas of Copenhagen, Restaurant KEA has been at the forefront of Denmark's culinary
-                life for the past decade. Let us take you on a journey of taste that you will never forget. You will
-                not only not regret it, but you will feel an urge to spread the good news around to your friends
-                and family. So amazing is the food experience at Restaurant KEA. We look forward to serving you.
-            </p>
+            <p>Guldbergsgade 29</p>
+            <p>2200 Copenhagen</p>
+            <p>Phone no.: <a href="tel:20825370">20 82 53 70</a> </p>
+            <p>E-mail: <a href="mailto:info@restaurantkea.dk">info@restaurantkea.dk</a></p>
         </section>
         <section>
             <img src="./img/map.jpg" alt="map of KEA Restaurant">
         </section>
         <section>
+            <!-- <form action="mailto:info@restaurantkea.dk" method="post"> -->
             <form action="./process.php" method="post">
                 <fieldset>
                     <legend>Contact form</legend>
@@ -43,7 +41,7 @@
                     <div>
                         <label for="phone_number">
                             Phone no.
-                            <input id="phone_number" name="phone_number" type="text">
+                            <input id="phone_number" name="phone_number" type="text" maxlength="8">
                         </label>
                     </div>
                     <div>
@@ -55,7 +53,7 @@
                     <div>
                         <label for="persons">
                             Persons
-                            <input id="persons" name="persons" type="number" value="2">
+                            <input id="persons" name="persons" type="number" value="2" min="1" max="20">
                         </label>
                     </div>
                     <div>

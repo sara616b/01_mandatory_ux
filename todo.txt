@@ -1,11 +1,7 @@
-HTML
---validation
+HTML ------ DONE?
 
-MUSIC
---everything
+MUSIC ------ DONE
 
-TAX CALCULATOR
---check through code
+TAX CALCULATOR ----DONE
 
-TEMERATURE
---everything
+TEMERATURE ----- DONE
